@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class StarPrint_3 {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
-        int line;
 
+        int line;
         System.out.println("몇줄 만드실?");
         line=input.nextInt();
 

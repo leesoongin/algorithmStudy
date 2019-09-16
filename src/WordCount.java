@@ -1,6 +1,11 @@
+import java.util.Scanner;
+
 public class WordCount {
     public static void main(String[] args) {
-        String str_1 = " lee soong in";
+        String str_1 ;
+        Scanner sc = new Scanner(System.in);
+        str_1=sc.nextLine();
+
         int wordCount = 0;
         int total;
         int index=0;
@@ -19,6 +24,7 @@ public class WordCount {
 
         total=wordCount + 1;
 
-        System.out.println("단어의 총 개수는 "+total+" 개");
+        System.out.println(total);
+
     }//main
 }
