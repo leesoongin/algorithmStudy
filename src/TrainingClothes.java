@@ -4,13 +4,13 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TrainingClothes {
     static ArrayList <Integer> lostArr = new ArrayList<Integer>(); //도난당한 친구들
     static ArrayList<Integer> reserveArr=new ArrayList<Integer>(); // 여분 가지고온 친구들
 
     public static void main(String arg[]){
-
         int n;
         int[] lostS_num,reserveS_num;
         String lost,reserve;
@@ -22,6 +22,7 @@ public class TrainingClothes {
             lost=bf.readLine();//도난 24
             reserve=bf.readLine();//여분 35
 
+            bf.close();
             for(int i=0;i<lost.length();i++) // ex. 0 -> 2    1 -> 4
                 lostArr.add(Integer.parseInt(""+lost.charAt(i)));
             lostS_num=new int[lostArr.size()];
