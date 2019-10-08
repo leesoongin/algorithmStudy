@@ -75,7 +75,6 @@ public class Progarmmers_BruteForce_02 {
             if(test.get(i) != "") {
                 for(int j=0;j<testParseInt.size();j++) {
                     if(Integer.parseInt(test.get(i)) == testParseInt.get(j)) {
-                        //System.out.println(Integer.parseInt(test.get(i)));
                         isCheck=true;//중복이 존재한다.
                         break;
                     }
@@ -92,7 +91,6 @@ public class Progarmmers_BruteForce_02 {
             for (int j = 0; j < testParseInt.size(); j++) {
                 if (permitionNumber.get(i) == testParseInt.get(j)) {
                     answer++;
-                    //System.out.println(permitionNumber.get(i));
                 }
 
             }
