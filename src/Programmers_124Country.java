@@ -72,7 +72,6 @@ public class Programmers_124Country {
         for (int i = 0; i< n; i++) {//중복 허용하는 순열.
             registCombinationArray[depth]=arr[i];
             perm(arr, depth + 1, n, k);
-
         }
     }
 }
