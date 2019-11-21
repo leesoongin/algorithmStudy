@@ -23,13 +23,10 @@ public class Programmers_Etc_SkillTree {
                     break;
                 }
             }//inner for
-
             if (isCheck) {//만약 순서대로 들어갔다면
                 answer++;
             }
         }//for
-
-
         return answer;
     }
 }
