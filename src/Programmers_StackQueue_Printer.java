@@ -20,7 +20,9 @@ public class Programmers_StackQueue_Printer {
        while(!queue.isEmpty()){
            for(int i=0;i<priorities.length;i++){
                if(queue.peek() == priorities[i]){
-                   if(i == location){ return answer+1;}
+                   if(i == location){
+                       return answer+1;
+                   }
                    queue.poll();
                    answer++;
                }//if
