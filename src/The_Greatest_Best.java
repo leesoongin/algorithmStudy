@@ -31,14 +31,14 @@ public class The_Greatest_Best {
             str[i]=Integer.toString(numbers[i]);
         }
 
-        Arrays.sort(str,new Comparator<String>() {
+        Arrays.sort(str,new Comparator<String>() { //정렬하고
             @Override
             public int compare(String o1, String o2) {
                 return (o2+o1).compareTo(o1+o2);
             }
         });
 
-        if(str[0].equals("0")){
+        if(str[0].equals("0")){ //모두 0일때 , 예외조건.
             return answer="0";
         }
 
@@ -48,3 +48,9 @@ public class The_Greatest_Best {
         return answer;
     }
 }
+
+/*
+이 문제는 comparable , comparator 를 잘 아느냐 하는 문제
+주요매서드 compare, compareTo  에 대해 잘 알고있어야 풀수있음.
+별도로 String 메소드인 valueOf, stringBuffer 등 String 클래스의 메소드들을 알아놓으면 훨씬 쉽게 풀릴문제
+* */
