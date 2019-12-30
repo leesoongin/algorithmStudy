@@ -97,4 +97,7 @@ public class K_count {
     arr.length=5
     arr[i].length=3
 
+    arrays의 메소드 둘다 전달받은 특정 길이만큼 새로운배열을 복사 -> 반환
+    arr1=copyOf(arr,반환할 배열의 크기)
+    arr2=copyOfRange(arr, 여기부터 , 여기까지)
 * */
