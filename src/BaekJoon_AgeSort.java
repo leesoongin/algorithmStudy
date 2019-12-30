@@ -31,6 +31,5 @@ public class BaekJoon_AgeSort {
         for(int i=0;i<arr.length;i++) {
             System.out.println(arr[i][0]+" "+arr[i][1]);
         }//for
-
     }//main
 }//class

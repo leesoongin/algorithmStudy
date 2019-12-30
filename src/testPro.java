@@ -1,17 +1,21 @@
 import java.util.Arrays;
 
 public class testPro {
+    /*
+    정수형변수 a, b
+     * swap 하나 만들기.
+    * 임시변수 못만들고.
+    *
+    * */
+
     public static void main(String[] args){
-        int arr[]=new int[3];
+        int a=5;
+        int b=8;
 
-        arr[0]=2;
-        arr[1]=1;
-        arr[2]=3;
+        swap(a,b);
+    }
 
-        Arrays.sort(arr);
+    public static void swap(int a,int b){
 
-        for(int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
-        }
     }
 }
