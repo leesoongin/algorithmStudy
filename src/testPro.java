@@ -1,21 +1,32 @@
 import java.util.Arrays;
 
 public class testPro {
-    /*
-    정수형변수 a, b
-     * swap 하나 만들기.
-    * 임시변수 못만들고.
-    *
-    * */
-
     public static void main(String[] args){
-        int a=5;
-        int b=8;
+        Student[] st=new Student[2];
 
-        swap(a,b);
+      st[0]=new Student("A");
+      st[1]=new Student("B");
+
+        Arrays.sort(st);
+
+        for(int i=0;i<st.length;i++){
+            System.out.println(st[i].name);
+        }
     }
 
-    public static void swap(int a,int b){
-
-    }
 }
+class Student implements Comparable<Student>{
+    int age=0;
+    String name;
+
+    Student(){
+
+    }
+    Student(String _name){
+        this.name=_name;
+    }
+    @Override
+    public int compareTo(Student o1) {
+        return name.compareTo(o1.name);
+    }
+}//class
