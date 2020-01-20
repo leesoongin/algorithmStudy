@@ -65,3 +65,13 @@ public class Programmers_Development {
         return answer;
     }
 }
+/*
+* queue 의 메서드 peek은 Object 가 반환값이다 수의 크기 비교를위해서 그냥
+* if(queue.peek() >= 100) 이런식으로 코드 작성한경우 NullpointerException 이 발생
+* why?
+* Object -> Integer형으로 boxing 해야하기때문.
+*
+* int temp=(Integer)queue.peek(); 하는게 바람직
+* Integer -> int 형으로는 자동 boxing 이 되기때문에 Integer로 TypeCasting 하자.
+* 이것만 알면 쉬운문제 ..
+* */
