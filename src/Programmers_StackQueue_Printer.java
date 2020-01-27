@@ -27,28 +27,6 @@ priorities	location	return
 예제 #2
 
 6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다.
-
-* */
-/*
-        우선순위 큐 사용
-        PriorityQueue<Integer> queue=new PriorityQueue<>(Collections.reverseOrder());
-
-        for(int i=0;i<priorities.length;i++){
-           queue.offer(priorities[i]);
-        }
-
-       while(!queue.isEmpty()){
-           for(int i=0;i<priorities.length;i++){
-               if(queue.peek() == priorities[i]){
-                   if(i == location){
-                       return answer+1;
-                   }
-                   queue.poll();
-                   answer++;
-               }//if
-           }//for
-       }//while
-
 */
 public class Programmers_StackQueue_Printer {
     public static void main(String[] args){
