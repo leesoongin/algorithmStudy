@@ -59,32 +59,24 @@ public class Programmers_StackQueue_Printer {
     }
 
     public static int solution(int[] priorities, int location) {
-        List<Integer> list=new ArrayList<Integer>();
-        Queue<Integer> queue=new LinkedList<Integer>();int answer=0;
+        int answer=0;
+        PriorityQueue<Integer> queue=new PriorityQueue<Integer>(Collections.reverseOrder()); //우선순위가 높으니 정렬 기준을 내림차순으로 설정
 
-        for(int i=0;i<priorities.length;i++) {
-            list.add(priorities[i]);
-        }
-
-        Collections.sort(list);
-        Collections.reverse(list);
-
-        for(int i=0;i<list.size();i++){
-            queue.offer(list.get(i));
+        for(int i=0;i<priorities.length;i++){ // arr -> queue
+            queue.offer(priorities[i]);
         }
 
         while(!queue.isEmpty()){
             for(int i=0;i<priorities.length;i++){
                 if(queue.peek() == priorities[i]){
-                    if(i == location){
+                    if(location == i){ // 내가 알고싶은 작업이라면
                         return answer+1;
                     }
+                    answer++; // 우선순위 순으로 빠지는데, 내가 찾고자하는 작업이 아니라면 다음 순으로 ++
                     queue.poll();
-                    answer++;
-                }//if
-            }//for
+                }
+            }//inner for
         }//while
-
-        return answer+1;
+        return -1; //잘못됬을경우 그냥 -1 return
     }
 }

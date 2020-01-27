@@ -2,21 +2,31 @@ import java.util.*;
 
 public class TestPro {
     public static void main(String[] args){
-       Queue<People> queue=new LinkedList<People>();
+        int[] priorities={2,1,3,2};
+        int location=2;
 
-       People per=new People(15);
-
-       queue.offer(per);
-
-       for(People people : queue){
-           System.out.println(people._age);
-       }
+        System.out.println(solution(priorities,location));
     }//main
-}
-class People{
-    int _age;
+    public static int solution(int[] priorities, int location) {
+        int answer = 0;
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>(Collections.reverseOrder());
 
-    People(int age){
-        this._age=age;
+        for (int i = 0; i < priorities.length; i++) { //arr -> queue
+            queue.offer(priorities[i]);
+        }
+
+        while(!queue.isEmpty()){
+            for(int i=0;i<priorities.length;i++){
+                if(queue.peek() == priorities[i]){
+                    if(i == location){
+                        return answer+1;
+                    }
+                    queue.poll();
+                    answer++;
+                }//if
+            }//for
+        }//while
+
+        return answer+1;
     }
 }
