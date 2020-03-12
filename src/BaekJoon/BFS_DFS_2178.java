@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/*미로찾기*/
 
 public class BFS_DFS_2178 {
     static int[] dr = {1,-1,0,0};
