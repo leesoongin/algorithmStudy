@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/*토마토*/
 public class BFS_DFS_7576 {
     static int N, M;
     static int[][] map;
