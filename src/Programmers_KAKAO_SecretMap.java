@@ -14,13 +14,10 @@ public class Programmers_KAKAO_SecretMap {
 
     public static String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
-        int value;
         StringBuilder sb;
 
         for(int i=0;i<n;i++){
-            value=arr1[i] | arr2[i];
-
-            answer[i]=Integer.toBinaryString(value);
+            answer[i]=Integer.toBinaryString(arr1[i] | arr2[i]);
         }//for
 
         for(int i=0;i<n;i++){
