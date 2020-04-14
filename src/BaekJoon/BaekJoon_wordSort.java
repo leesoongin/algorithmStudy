@@ -1,3 +1,5 @@
+package BaekJoon;
+
 import java.util.*;
 
 /*

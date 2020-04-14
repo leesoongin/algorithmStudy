@@ -1,3 +1,50 @@
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class K_count {
+    public static void main(String[] args){
+        int[] arr={1,5,2,6,3,7,4};
+        int[][] commands={{2,5,3},{4,4,1},{1,7,3}}; //[3][3]
+        int[] answer;
+
+        answer=solution(arr,commands);
+
+        for(int i=0;i<answer.length;i++){
+            System.out.print(answer[i]);
+        }
+    }
+    public static int[] solution(int[] arr,int[][] commands){
+        int[] answer=new int[commands.length];
+        int answerIndex=0;
+        List<Integer> list;
+
+        for(int i=0;i<commands.length;i++){
+            list=new ArrayList<Integer>();
+            for(int j=commands[i][0]-1;j<commands[i][1];j++) { // 2 - 5 , 4 - 4 , 1 - 7
+                list.add(arr[j]);
+            }//inner for
+            Collections.sort(list); //오름차순이니까 comparator 는 딱히 필요없을듯. 오름차순정렬 후
+            answer[answerIndex++]=list.get(commands[i][2]-1); //정렬 된 배열에서 찾고자하는 순서의 수를 찾아서 answer배열에 저장
+        }//for
+        return answer;
+    }
+}
+/*
+    깨알 tip !
+
+    2차원 배열의 크기
+    int arr[5][3];
+    arr.length=5
+    arr[i].length=3
+
+    arrays의 메소드 둘다 전달받은 특정 길이만큼 새로운배열을 복사 -> 반환
+    arr1=copyOf(arr,반환할 배열의 크기)
+    arr2=copyOfRange(arr, 여기부터 , 여기까지)
+* */
+
 /*
 import java.util.ArrayList;
 
@@ -54,50 +101,4 @@ array   commands   return
 [1, 5, 2, 6, 3, 7, 4]를 2번째부터 5번째까지 자른 후 정렬합니다. [2, 3, 5, 6]의 세 번째 숫자는 5입니다.
 [1, 5, 2, 6, 3, 7, 4]를 4번째부터 4번째까지 자른 후 정렬합니다. [6]의 첫 번째 숫자는 6입니다.
 [1, 5, 2, 6, 3, 7, 4]를 1번째부터 7번째까지 자릅니다. [1, 2, 3, 4, 5, 6, 7]의 세 번째 숫자는 3입니다.
-* */
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class K_count {
-    public static void main(String[] args){
-        int[] arr={1,5,2,6,3,7,4};
-        int[][] commands={{2,5,3},{4,4,1},{1,7,3}}; //[3][3]
-        int[] answer;
-
-        answer=solution(arr,commands);
-
-        for(int i=0;i<answer.length;i++){
-            System.out.print(answer[i]);
-        }
-    }
-    public static int[] solution(int[] arr,int[][] commands){
-        int[] answer=new int[commands.length];
-        int answerIndex=0;
-        List<Integer> list;
-
-        for(int i=0;i<commands.length;i++){
-            list=new ArrayList<Integer>();
-            for(int j=commands[i][0]-1;j<commands[i][1];j++) { // 2 - 5 , 4 - 4 , 1 - 7
-                list.add(arr[j]);
-            }//inner for
-            Collections.sort(list); //오름차순이니까 comparator 는 딱히 필요없을듯. 오름차순정렬 후
-            answer[answerIndex++]=list.get(commands[i][2]-1); //정렬 된 배열에서 찾고자하는 순서의 수를 찾아서 answer배열에 저장
-        }//for
-        return answer;
-    }
-}
-/*
-    깨알 tip !
-
-    2차원 배열의 크기
-    int arr[5][3];
-    arr.length=5
-    arr[i].length=3
-
-    arrays의 메소드 둘다 전달받은 특정 길이만큼 새로운배열을 복사 -> 반환
-    arr1=copyOf(arr,반환할 배열의 크기)
-    arr2=copyOfRange(arr, 여기부터 , 여기까지)
 * */
